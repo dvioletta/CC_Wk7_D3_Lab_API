@@ -5,7 +5,7 @@ const InfoView = function (container) {
 };
 
 InfoView.prototype.bindEvents = function() {
-  PubSub.subscribe('Countries:SelectView Change', (evt) => {
+  PubSub.subscribe('Selected Country ready', (evt) => {
     const countryInfo = evt.detail;
     console.log(countryInfo);
     this.display(countryInfo);
