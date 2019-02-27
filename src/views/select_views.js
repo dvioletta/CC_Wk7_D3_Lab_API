@@ -12,7 +12,8 @@ SelectView.prototype.bindEvents = function(){
   });
 
   this.element.addEventListener('change', (evt) => {
-    const selectedIndex = evt.target;
+    const selectedIndex = evt.target.value;
+    console.log(selectedIndex);
     PubSub.publish('Countries:SelectView Change', selectedIndex);
   });
 };

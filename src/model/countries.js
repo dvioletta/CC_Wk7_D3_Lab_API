@@ -15,12 +15,14 @@ Country.prototype.getData = function() {
   });
   PubSub.subscribe('Countries:SelectView Change', (evt) =>{
     const selectedCountry = evt.detail;
+
     this.publishCountryData(selectedCountry);
   });
 };
 
 Country.prototype.publishCountryData = function(countriesIndex){
  const selectedCountry = this.text[countriesIndex];
+ console.log(selectedCountry);
  PubSub.publish('Selected Country ready', selectedCountry);
 };
 

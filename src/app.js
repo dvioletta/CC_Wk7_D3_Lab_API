@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('hi');
   selectView.bindEvents();
 
+  const infodivB = document.querySelector('#country');
+  const infoview = new InfoView(infodivB);
+  
+  infoview.bindEvents();
+
   const countries = new Country();
   countries.getData();
 
